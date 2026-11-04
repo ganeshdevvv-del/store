@@ -1,0 +1,300 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    color: #172033;
+    background: #f2f5f4;
+    font: 15px/1.5 Arial, sans-serif;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.top-bar,
+.search-bar,
+.action-btns,
+.modal-header,
+.modal-actions,
+.pagination-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar,
+.modal-header {
+    justify-content: space-between;
+}
+
+.top-bar {
+    margin-bottom: 18px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+a,
+button {
+    font: inherit;
+}
+
+.btn-add,
+.search-bar button,
+.btn-modal-update {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: #0864f7;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.notice {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.notice-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.notice-error {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.search-bar {
+    margin-bottom: 18px;
+}
+
+.search-bar input {
+    flex: 1;
+    max-width: 360px;
+    padding: 10px 12px;
+    border: 1px solid #cbd5d1;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.btn-clear {
+    color: #334155;
+}
+
+.search-info {
+    color: #5b6675;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e9e8;
+    vertical-align: top;
+}
+
+th {
+    background: #f7f9f8;
+}
+
+td.message {
+    min-width: 220px;
+    white-space: pre-wrap;
+}
+
+.action-btns {
+    flex-wrap: wrap;
+}
+
+.edit-button,
+.remove-button,
+.btn-modal-cancel {
+    padding: 7px 10px;
+    border: 1px solid #0864f7;
+    border-radius: 4px;
+    background: #fff;
+    color: #0864f7;
+    cursor: pointer;
+}
+
+.remove-button {
+    border-color: #b42318;
+    color: #b42318;
+}
+
+.empty {
+    padding: 24px;
+    text-align: center;
+    color: #5b6675;
+}
+
+.pagination-wrap {
+    justify-content: flex-end;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.pagination-info {
+    margin-right: auto;
+    color: #5b6675;
+}
+
+.pagination {
+    display: flex;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    min-width: 36px;
+    padding: 6px 10px;
+    border: 1px solid #dce3ec;
+    border-radius: 4px;
+    color: #334155;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pagination .active span {
+    background: #0864f7;
+    color: #fff;
+}
+
+.pagination .disabled span {
+    color: #c0c7d0;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: #0008;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-box {
+    width: min(600px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.modal-header {
+    padding: 16px 20px 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-close {
+    border: 0;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modal-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #cbd5d1;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.modal-field textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.modal-actions {
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.btn-modal-cancel {
+    border-color: #cbd5d1;
+    color: #334155;
+}
+
+.btn-modal-update {
+    background: #16803c;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 16px 10px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-field.full-width {
+        grid-column: auto;
+    }
+
+    .pagination-wrap {
+        justify-content: center;
+    }
+}
